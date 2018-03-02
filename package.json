@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "SVG asset for vue",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miralize/parcel-plugin-vue-inlinesvg"
+  },
+  "keywords": [
+    "parcel",
+    "vue",
+    "svg",
+    "inline-svg",
+    "parcel.js"
+  ],
   "dependencies": {
     "parcel-bundler": "^1.6.2",
     "svgo": "^1.0.5",
