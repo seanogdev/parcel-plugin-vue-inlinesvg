@@ -1,6 +1,6 @@
 {
   "name": "parcel-plugin-vue-inlinesvg",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "SVG asset for vue",
   "main": "index.js",
   "repository": {
