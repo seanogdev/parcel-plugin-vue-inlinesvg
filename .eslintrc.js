@@ -3,9 +3,14 @@ module.exports = {
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+      'eslint:recommended',
+      'plugin:vue/essential'
+    ],
     "parserOptions": {
-      "ecmaVersion": 8
+      parser: "babel-eslint",
+      sourceType: "module",
+      ecmaVersion: 8
     },
     "rules": {
         "indent": [

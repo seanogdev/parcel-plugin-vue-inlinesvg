@@ -44,6 +44,5 @@ In your Vue component, import thie SVG directly as if it were any other ES modul
 ## TODO
 
 - Allow custom [SVGO configuration](https://github.com/svg/svgo) via an SVGO config file or inside `package.json`
-- **Tests**
 
 

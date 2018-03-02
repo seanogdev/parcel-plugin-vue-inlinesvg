@@ -2,14 +2,13 @@ const JSAssetLib = require('parcel-bundler/lib/assets/JSAsset')
 const JSAssetSrc = require('parcel-bundler/src/assets/JSAsset')
 const JSAsset = parseInt(process.versions.node, 10) < 8 ? JSAssetLib : JSAssetSrc
 const SVGO = require('svgo')
-const transpiler = require('./transpiler')
+const compiler = require('./template-compiler')
 
-const plugins = [
+const defaultPlugins = [
 	{ removeDoctype: true },
 	{ removeComments: true },
 	{ removeXMLNS: true }
 ]
-
 class VueInlineSVGAsset extends JSAsset {
 
 	constructor(...args) {
@@ -20,16 +19,16 @@ class VueInlineSVGAsset extends JSAsset {
 	async parse(code) {
 		const filename = this.basename.slice(0, -4)
 
-		const svgoInstance = new SVGO({ plugins })
+		const svgoInstance = new SVGO({ plugins: defaultPlugins })
 
 		const optimizedSVG = await svgoInstance.optimize(code)
 
-		const { render, staticRenderFns } = transpiler(optimizedSVG.data)
+		const compiled = compiler(optimizedSVG.data)
 
 		const VueSVGModule = `module.exports = {
       name: '${filename}',
-      render: ${render},
-      staticRenderFns: ${staticRenderFns}
+      render: ${compiled.render},
+      staticRenderFns: ${compiled.staticRenderFns}
     }`
 
 		return await super.parse(VueSVGModule)
