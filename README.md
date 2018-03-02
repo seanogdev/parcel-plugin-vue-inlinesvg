@@ -15,6 +15,8 @@ npm i -D parcel-plugin-vue-inlinesvg parcel-plugin-vue
 
 ## Usage
 
+When starting the Parcel bundler you should run it with the `--no-cache` argument
+
 In your Vue component, import thie SVG directly as if it were any other ES module.
 
 ```
