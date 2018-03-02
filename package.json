@@ -1,0 +1,21 @@
+{
+  "name": "parcel-plugin-vue-inlinesvg",
+  "version": "1.0.0",
+  "description": "SVG asset for vue",
+  "main": "index.js",
+  "dependencies": {
+    "parcel-bundler": "^1.6.2",
+    "svgo": "^1.0.5",
+    "vue-template-compiler": "^2.5.13",
+    "vue-template-es2015-compiler": "^1.6.0"
+  },
+  "devDependencies": {
+    "debug": "^3.1.0",
+    "eslint": "^4.18.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
